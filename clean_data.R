@@ -53,3 +53,4 @@ county_merged <- inner_join(cdbg_classified %>% filter(geo_level=="county"), cou
 anti_join(cdbg_classified %>% filter(geo_level=="county"), county_stats, by = c("state_fips"="state_fips","grantee_name"="county_name")) %>% count(state, grantee) 
 
 city_merged <- inner_join(cdbg_classified %>% filter(geo_level=="place"), city_stats, by = c("state_fips"="state_fips","grantee_name"="place_name"))
+anti_join(cdbg_classified %>% filter(geo_level=="county"), county_stats, by = c("state_fips"="state_fips","grantee_name"="county_name")) %>% count(state, grantee) 
